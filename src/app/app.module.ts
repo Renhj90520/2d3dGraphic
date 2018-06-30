@@ -29,6 +29,9 @@ import { CanvasLineeffectComponent } from './canvas-lineeffect/canvas-lineeffect
 import { CanvasCrazyFireworksComponent } from './canvas-crazy-fireworks/canvas-crazy-fireworks.component';
 import { CanvasStarrySkyComponent } from './canvas-starry-sky/canvas-starry-sky.component';
 import { CanvasConfettiCannonComponent } from './canvas-confetti-cannon/canvas-confetti-cannon.component';
+import { CanvasCircleLoaderComponent } from './canvas-circle-loader/canvas-circle-loader.component';
+import { CanvasBubbleComponent } from './canvas-bubble/canvas-bubble.component';
+import { CanvasBokehGenerationComponent } from './canvas-bokeh-generation/canvas-bokeh-generation.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { CanvasConfettiCannonComponent } from './canvas-confetti-cannon/canvas-c
     CanvasLineeffectComponent,
     CanvasCrazyFireworksComponent,
     CanvasStarrySkyComponent,
-    CanvasConfettiCannonComponent
+    CanvasConfettiCannonComponent,
+    CanvasCircleLoaderComponent,
+    CanvasBubbleComponent,
+    CanvasBokehGenerationComponent
   ],
   imports: [BrowserModule],
   providers: [],
