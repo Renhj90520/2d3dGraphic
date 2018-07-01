@@ -32,6 +32,7 @@ import { CanvasConfettiCannonComponent } from './canvas-confetti-cannon/canvas-c
 import { CanvasCircleLoaderComponent } from './canvas-circle-loader/canvas-circle-loader.component';
 import { CanvasBubbleComponent } from './canvas-bubble/canvas-bubble.component';
 import { CanvasBokehGenerationComponent } from './canvas-bokeh-generation/canvas-bokeh-generation.component';
+import { CanvasAzureLoadingComponent } from './canvas-azure-loading/canvas-azure-loading.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { CanvasBokehGenerationComponent } from './canvas-bokeh-generation/canvas
     CanvasConfettiCannonComponent,
     CanvasCircleLoaderComponent,
     CanvasBubbleComponent,
-    CanvasBokehGenerationComponent
+    CanvasBokehGenerationComponent,
+    CanvasAzureLoadingComponent
   ],
   imports: [BrowserModule],
   providers: [],
