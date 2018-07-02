@@ -33,6 +33,8 @@ import { CanvasCircleLoaderComponent } from './canvas-circle-loader/canvas-circl
 import { CanvasBubbleComponent } from './canvas-bubble/canvas-bubble.component';
 import { CanvasBokehGenerationComponent } from './canvas-bokeh-generation/canvas-bokeh-generation.component';
 import { CanvasAzureLoadingComponent } from './canvas-azure-loading/canvas-azure-loading.component';
+import { CanvasMatrixTextComponent } from './canvas-matrix-text/canvas-matrix-text.component';
+import { CanvasNeonBubblesComponent } from './canvas-neon-bubbles/canvas-neon-bubbles.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { CanvasAzureLoadingComponent } from './canvas-azure-loading/canvas-azure
     CanvasCircleLoaderComponent,
     CanvasBubbleComponent,
     CanvasBokehGenerationComponent,
-    CanvasAzureLoadingComponent
+    CanvasAzureLoadingComponent,
+    CanvasMatrixTextComponent,
+    CanvasNeonBubblesComponent
   ],
   imports: [BrowserModule],
   providers: [],
