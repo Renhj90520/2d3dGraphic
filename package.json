@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -41,7 +41,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/lodash": "^4.14.109",
     "@types/node": "~6.0.60",
-    "@types/three": "^0.91.11",
+    "@types/three": "^0.92.12",
     "codelyzer": "~3.0.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",

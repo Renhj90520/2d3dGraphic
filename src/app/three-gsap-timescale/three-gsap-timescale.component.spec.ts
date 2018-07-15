@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CanvasLineeffectComponent } from './canvas-lineeffect.component';
+import { ThreeGsapTimescaleComponent } from './three-gsap-timescale.component';
 
-describe('CanvasLineeffectComponent', () => {
-  let component: CanvasLineeffectComponent;
-  let fixture: ComponentFixture<CanvasLineeffectComponent>;
+describe('ThreeGsapTimescaleComponent', () => {
+  let component: ThreeGsapTimescaleComponent;
+  let fixture: ComponentFixture<ThreeGsapTimescaleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CanvasLineeffectComponent ]
+      declarations: [ ThreeGsapTimescaleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CanvasLineeffectComponent);
+    fixture = TestBed.createComponent(ThreeGsapTimescaleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

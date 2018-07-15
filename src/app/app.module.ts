@@ -35,6 +35,7 @@ import { CanvasBokehGenerationComponent } from './canvas-bokeh-generation/canvas
 import { CanvasAzureLoadingComponent } from './canvas-azure-loading/canvas-azure-loading.component';
 import { CanvasMatrixTextComponent } from './canvas-matrix-text/canvas-matrix-text.component';
 import { CanvasNeonBubblesComponent } from './canvas-neon-bubbles/canvas-neon-bubbles.component';
+import { ThreeGsapTimescaleComponent } from './three-gsap-timescale/three-gsap-timescale.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { CanvasNeonBubblesComponent } from './canvas-neon-bubbles/canvas-neon-bu
     CanvasBokehGenerationComponent,
     CanvasAzureLoadingComponent,
     CanvasMatrixTextComponent,
-    CanvasNeonBubblesComponent
+    CanvasNeonBubblesComponent,
+    ThreeGsapTimescaleComponent
   ],
   imports: [BrowserModule],
   providers: [],
