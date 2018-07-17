@@ -36,6 +36,8 @@ import { CanvasAzureLoadingComponent } from './canvas-azure-loading/canvas-azure
 import { CanvasMatrixTextComponent } from './canvas-matrix-text/canvas-matrix-text.component';
 import { CanvasNeonBubblesComponent } from './canvas-neon-bubbles/canvas-neon-bubbles.component';
 import { ThreeGsapTimescaleComponent } from './three-gsap-timescale/three-gsap-timescale.component';
+import { ThreeRotateShapesComponent } from './three-rotate-shapes/three-rotate-shapes.component';
+import { ThreeGsapFlipyComponent } from './three-gsap-flipy/three-gsap-flipy.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { ThreeGsapTimescaleComponent } from './three-gsap-timescale/three-gsap-t
     CanvasAzureLoadingComponent,
     CanvasMatrixTextComponent,
     CanvasNeonBubblesComponent,
-    ThreeGsapTimescaleComponent
+    ThreeGsapTimescaleComponent,
+    ThreeRotateShapesComponent,
+    ThreeGsapFlipyComponent
   ],
   imports: [BrowserModule],
   providers: [],
