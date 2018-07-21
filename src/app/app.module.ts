@@ -38,6 +38,9 @@ import { CanvasNeonBubblesComponent } from './canvas-neon-bubbles/canvas-neon-bu
 import { ThreeGsapTimescaleComponent } from './three-gsap-timescale/three-gsap-timescale.component';
 import { ThreeRotateShapesComponent } from './three-rotate-shapes/three-rotate-shapes.component';
 import { ThreeGsapFlipyComponent } from './three-gsap-flipy/three-gsap-flipy.component';
+import { ThreeKaleidoscopeComponent } from './three-kaleidoscope/three-kaleidoscope.component';
+import { ThreeScalingBallComponent } from './three-scaling-ball/three-scaling-ball.component';
+import { ThreeProceduralTunnelComponent } from './three-procedural-tunnel/three-procedural-tunnel.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +80,10 @@ import { ThreeGsapFlipyComponent } from './three-gsap-flipy/three-gsap-flipy.com
     CanvasNeonBubblesComponent,
     ThreeGsapTimescaleComponent,
     ThreeRotateShapesComponent,
-    ThreeGsapFlipyComponent
+    ThreeGsapFlipyComponent,
+    ThreeKaleidoscopeComponent,
+    ThreeScalingBallComponent,
+    ThreeProceduralTunnelComponent
   ],
   imports: [BrowserModule],
   providers: [],

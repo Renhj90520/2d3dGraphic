@@ -28,7 +28,7 @@
     "gsap": "^1.20.6",
     "lodash": "^4.17.10",
     "rxjs": "^5.4.1",
-    "three": "^0.92.0",
+    "three": "^0.94.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
