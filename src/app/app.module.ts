@@ -41,6 +41,7 @@ import { ThreeGsapFlipyComponent } from './three-gsap-flipy/three-gsap-flipy.com
 import { ThreeKaleidoscopeComponent } from './three-kaleidoscope/three-kaleidoscope.component';
 import { ThreeScalingBallComponent } from './three-scaling-ball/three-scaling-ball.component';
 import { ThreeProceduralTunnelComponent } from './three-procedural-tunnel/three-procedural-tunnel.component';
+import { ThreeMyworldComponent } from './three-myworld/three-myworld.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { ThreeProceduralTunnelComponent } from './three-procedural-tunnel/three-
     ThreeGsapFlipyComponent,
     ThreeKaleidoscopeComponent,
     ThreeScalingBallComponent,
-    ThreeProceduralTunnelComponent
+    ThreeProceduralTunnelComponent,
+    ThreeMyworldComponent
   ],
   imports: [BrowserModule],
   providers: [],

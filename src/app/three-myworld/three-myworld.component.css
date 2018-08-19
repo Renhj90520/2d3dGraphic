@@ -1,0 +1,6 @@
+:host {
+  width: 200px;
+  height: 200px;
+  display: block;
+  background: linear-gradient(#92e7ff 10%, #29c5ff 100%);
+}
