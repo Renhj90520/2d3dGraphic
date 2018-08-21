@@ -192,7 +192,6 @@ export class ThreeMyworldComponent implements OnInit {
 
     // double width of texture to fit the spritesheet width
     gomez.repeat.set(0.5, 1);
-    gomez.needsUpdate = true;
     const material = new THREE.SpriteMaterial({ map: gomez });
     const spriteSheet = new THREE.Sprite(material);
     spriteSheet.position.y = 3;
@@ -213,7 +212,6 @@ export class ThreeMyworldComponent implements OnInit {
 
     mill.minFilter = THREE.NearestFilter;
     mill.magFilter = THREE.NearestFilter;
-    mill.needsUpdate = true;
     const material = new THREE.MeshBasicMaterial({
       map: mill,
       transparent: true,

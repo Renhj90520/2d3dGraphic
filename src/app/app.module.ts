@@ -42,6 +42,8 @@ import { ThreeKaleidoscopeComponent } from './three-kaleidoscope/three-kaleidosc
 import { ThreeScalingBallComponent } from './three-scaling-ball/three-scaling-ball.component';
 import { ThreeProceduralTunnelComponent } from './three-procedural-tunnel/three-procedural-tunnel.component';
 import { ThreeMyworldComponent } from './three-myworld/three-myworld.component';
+import { ThreeEarthComponent } from './three-earth/three-earth.component';
+import { ThreeLiquidComponent } from './three-liquid/three-liquid.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,9 @@ import { ThreeMyworldComponent } from './three-myworld/three-myworld.component';
     ThreeKaleidoscopeComponent,
     ThreeScalingBallComponent,
     ThreeProceduralTunnelComponent,
-    ThreeMyworldComponent
+    ThreeMyworldComponent,
+    ThreeEarthComponent,
+    ThreeLiquidComponent
   ],
   imports: [BrowserModule],
   providers: [],
