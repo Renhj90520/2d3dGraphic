@@ -44,6 +44,7 @@ import { ThreeProceduralTunnelComponent } from './three-procedural-tunnel/three-
 import { ThreeMyworldComponent } from './three-myworld/three-myworld.component';
 import { ThreeEarthComponent } from './three-earth/three-earth.component';
 import { ThreeLiquidComponent } from './three-liquid/three-liquid.component';
+import { ThreeTrailingParticleComponent } from './three-trailing-particle/three-trailing-particle.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { ThreeLiquidComponent } from './three-liquid/three-liquid.component';
     ThreeProceduralTunnelComponent,
     ThreeMyworldComponent,
     ThreeEarthComponent,
-    ThreeLiquidComponent
+    ThreeLiquidComponent,
+    ThreeTrailingParticleComponent
   ],
   imports: [BrowserModule],
   providers: [],
