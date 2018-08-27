@@ -47,6 +47,7 @@ import { ThreeLiquidComponent } from './three-liquid/three-liquid.component';
 import { ThreeTrailingParticleComponent } from './three-trailing-particle/three-trailing-particle.component';
 import { CanvasParticleTrailComponent } from './canvas-particle-trail/canvas-particle-trail.component';
 import { ThreeTinyPolyworldComponent } from './three-tiny-polyworld/three-tiny-polyworld.component';
+import { ThreeFlowerComponent } from './three-flower/three-flower.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { ThreeTinyPolyworldComponent } from './three-tiny-polyworld/three-tiny-p
     ThreeLiquidComponent,
     ThreeTrailingParticleComponent,
     CanvasParticleTrailComponent,
-    ThreeTinyPolyworldComponent
+    ThreeTinyPolyworldComponent,
+    ThreeFlowerComponent
   ],
   imports: [BrowserModule],
   providers: [],
