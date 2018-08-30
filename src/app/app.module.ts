@@ -49,6 +49,7 @@ import { CanvasParticleTrailComponent } from './canvas-particle-trail/canvas-par
 import { ThreeTinyPolyworldComponent } from './three-tiny-polyworld/three-tiny-polyworld.component';
 import { ThreeFlowerComponent } from './three-flower/three-flower.component';
 import { ThreeBuffergeometryComponent } from './three-buffergeometry/three-buffergeometry.component';
+import { ThreePrimordialSoupComponent } from './three-primordial-soup/three-primordial-soup.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { ThreeBuffergeometryComponent } from './three-buffergeometry/three-buffe
     CanvasParticleTrailComponent,
     ThreeTinyPolyworldComponent,
     ThreeFlowerComponent,
-    ThreeBuffergeometryComponent
+    ThreeBuffergeometryComponent,
+    ThreePrimordialSoupComponent
   ],
   imports: [BrowserModule],
   providers: [],

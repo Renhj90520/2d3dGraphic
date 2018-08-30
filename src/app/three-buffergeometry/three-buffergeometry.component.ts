@@ -64,7 +64,7 @@ export class ThreeBuffergeometryComponent implements OnInit {
     this.positions = new Float32Array(segments * 3);
     this.colors = new Float32Array(segments * 3);
 
-    const pMaterial = new THREE.PointCloudMaterial({
+    const pMaterial = new THREE.PointsMaterial({
       color: 0xffffff,
       size: 3,
       blending: THREE.AdditiveBlending,
@@ -101,10 +101,10 @@ export class ThreeBuffergeometryComponent implements OnInit {
 
     particles.addAttribute(
       "position",
-      new THREE.DynamicBufferAttribute(this.particlePositions, 3)
+      new THREE.BufferAttribute(this.particlePositions, 3).setDynamic(true)
     );
 
-    this.pointCloud = new THREE.PointCloud(particles, pMaterial);
+    this.pointCloud = new THREE.Points(particles, pMaterial);
     (<THREE.BufferAttribute>(
       (<THREE.BufferGeometry>this.pointCloud.geometry).attributes.position
     )).needsUpdate = true;
@@ -113,12 +113,12 @@ export class ThreeBuffergeometryComponent implements OnInit {
     const geometry = new THREE.BufferGeometry();
     geometry.addAttribute(
       "position",
-      new THREE.DynamicBufferAttribute(this.positions, 3)
+      new THREE.BufferAttribute(this.positions, 3).setDynamic(true)
     );
 
     geometry.addAttribute(
       "color",
-      new THREE.DynamicBufferAttribute(this.colors, 3)
+      new THREE.BufferAttribute(this.colors, 3).setDynamic(true)
     );
     geometry.computeBoundingSphere();
     geometry.groups.push({
@@ -133,7 +133,7 @@ export class ThreeBuffergeometryComponent implements OnInit {
       transparent: true
     });
 
-    this.lineMesh = new THREE.Line(geometry, material, THREE.LinePieces);
+    this.lineMesh = new THREE.LineSegments(geometry, material);
     this.scene.add(this.lineMesh);
   }
 
@@ -207,7 +207,7 @@ export class ThreeBuffergeometryComponent implements OnInit {
         }
       }
     }
-    this.lineMesh.geometry.drawcalls[0].count = numConnected * 2;
+    this.lineMesh.geometry.groups[0].count = numConnected * 2;
     this.lineMesh.geometry.attributes.position.needsUpdate = true;
     this.lineMesh.geometry.attributes.color.needsUpdate = true;
     (<THREE.BufferAttribute>(
