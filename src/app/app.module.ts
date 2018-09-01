@@ -50,6 +50,7 @@ import { ThreeTinyPolyworldComponent } from './three-tiny-polyworld/three-tiny-p
 import { ThreeFlowerComponent } from './three-flower/three-flower.component';
 import { ThreeBuffergeometryComponent } from './three-buffergeometry/three-buffergeometry.component';
 import { ThreePrimordialSoupComponent } from './three-primordial-soup/three-primordial-soup.component';
+import { ThreeSuperMarryComponent } from './three-super-marry/three-super-marry.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { ThreePrimordialSoupComponent } from './three-primordial-soup/three-prim
     ThreeTinyPolyworldComponent,
     ThreeFlowerComponent,
     ThreeBuffergeometryComponent,
-    ThreePrimordialSoupComponent
+    ThreePrimordialSoupComponent,
+    ThreeSuperMarryComponent
   ],
   imports: [BrowserModule],
   providers: [],
