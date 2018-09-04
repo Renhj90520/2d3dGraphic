@@ -54,6 +54,7 @@ import { ThreeSuperMarryComponent } from './three-super-marry/three-super-marry.
 import { ThreeVoronoiZoomComponent } from './three-voronoi-zoom/three-voronoi-zoom.component';
 import { ThreeAreaLightComponent } from './three-area-light/three-area-light.component';
 import { ThreeSpinnerComponent } from './three-spinner/three-spinner.component';
+import { ThreeExplodeTextComponent } from './three-explode-text/three-explode-text.component';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { ThreeSpinnerComponent } from './three-spinner/three-spinner.component';
     ThreeSuperMarryComponent,
     ThreeVoronoiZoomComponent,
     ThreeAreaLightComponent,
-    ThreeSpinnerComponent
+    ThreeSpinnerComponent,
+    ThreeExplodeTextComponent
   ],
   imports: [BrowserModule],
   providers: [],
