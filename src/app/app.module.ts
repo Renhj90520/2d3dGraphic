@@ -55,6 +55,7 @@ import { ThreeVoronoiZoomComponent } from './three-voronoi-zoom/three-voronoi-zo
 import { ThreeAreaLightComponent } from './three-area-light/three-area-light.component';
 import { ThreeSpinnerComponent } from './three-spinner/three-spinner.component';
 import { ThreeExplodeTextComponent } from './three-explode-text/three-explode-text.component';
+import { ThreeFireComponent } from './three-fire/three-fire.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { ThreeExplodeTextComponent } from './three-explode-text/three-explode-te
     ThreeVoronoiZoomComponent,
     ThreeAreaLightComponent,
     ThreeSpinnerComponent,
-    ThreeExplodeTextComponent
+    ThreeExplodeTextComponent,
+    ThreeFireComponent
   ],
   imports: [BrowserModule],
   providers: [],
