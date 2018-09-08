@@ -59,6 +59,7 @@ import { ThreeFireComponent } from './three-fire/three-fire.component';
 import { ThreeSpriteSphereComponent } from './three-sprite-sphere/three-sprite-sphere.component';
 import { ThreeAirplaneComponent } from './three-airplane/three-airplane.component';
 import { ThreeAirplaneColoredComponent } from './three-airplane-colored/three-airplane-colored.component';
+import { ThreeLotusComponent } from './three-lotus/three-lotus.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { ThreeAirplaneColoredComponent } from './three-airplane-colored/three-ai
     ThreeFireComponent,
     ThreeSpriteSphereComponent,
     ThreeAirplaneComponent,
-    ThreeAirplaneColoredComponent
+    ThreeAirplaneColoredComponent,
+    ThreeLotusComponent
   ],
   imports: [BrowserModule],
   providers: [],
