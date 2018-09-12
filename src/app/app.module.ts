@@ -62,6 +62,7 @@ import { ThreeAirplaneColoredComponent } from "./three-airplane-colored/three-ai
 import { ThreeLotusComponent } from "./three-lotus/three-lotus.component";
 import { ThreeTunnelAnimationComponent } from './three-tunnel-animation/three-tunnel-animation.component';
 import { ThreeBlueLightComponent } from './three-blue-light/three-blue-light.component';
+import { ThreeNoiseGroundComponent } from './three-noise-ground/three-noise-ground.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,8 @@ import { ThreeBlueLightComponent } from './three-blue-light/three-blue-light.com
     ThreeAirplaneColoredComponent,
     ThreeLotusComponent,
     ThreeTunnelAnimationComponent,
-    ThreeBlueLightComponent
+    ThreeBlueLightComponent,
+    ThreeNoiseGroundComponent
   ],
   imports: [BrowserModule],
   providers: [],
