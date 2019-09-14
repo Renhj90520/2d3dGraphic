@@ -1,9 +1,10 @@
-import { Component, OnInit, ElementRef } from "@angular/core";
-import * as THREE from "three";
+import { Component, OnInit, ElementRef } from '@angular/core';
+import * as THREE from 'three';
+import { LegacyJSONLoader } from 'three/examples/jsm/loaders/deprecated/LegacyJSONLoader';
 @Component({
-  selector: "app-three-airplane-colored",
-  templateUrl: "./three-airplane-colored.component.html",
-  styleUrls: ["./three-airplane-colored.component.css"]
+  selector: 'app-three-airplane-colored',
+  templateUrl: './three-airplane-colored.component.html',
+  styleUrls: ['./three-airplane-colored.component.css']
 })
 export class ThreeAirplaneColoredComponent implements OnInit {
   scene;
@@ -50,8 +51,9 @@ export class ThreeAirplaneColoredComponent implements OnInit {
   }
 
   addPlane() {
-    const loader = new THREE.JSONLoader();
-    loader.load("assets/delta.js", (geo, mat) => {
+    const loader = new LegacyJSONLoader();
+    loader.load('assets/delta.js', result => {
+      const geo = result.geometry;
       const material = new THREE.MeshLambertMaterial({
         vertexColors: THREE.FaceColors
       });
@@ -70,7 +72,7 @@ export class ThreeAirplaneColoredComponent implements OnInit {
     const geometry = new THREE.BoxGeometry(20, 0.2, 20, 100, 2, 100);
     const material = new THREE.MeshBasicMaterial({
       wireframe: false,
-      color: "gray"
+      color: 'gray'
     });
 
     const box = new THREE.Mesh(geometry, material);

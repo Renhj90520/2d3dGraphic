@@ -2,7 +2,6 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 import Course from './course';
 import Truck from './truck';
-import { getCurrentDebugContext } from '@angular/core/src/view/services';
 @Component({
   selector: 'app-vector-cross',
   templateUrl: './vector-cross.component.html',

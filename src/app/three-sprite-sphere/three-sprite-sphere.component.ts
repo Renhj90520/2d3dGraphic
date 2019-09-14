@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef } from "@angular/core";
 import * as THREE from "three";
 
-import { CanvasRenderer } from "three";
 @Component({
   selector: "app-three-sprite-sphere",
   templateUrl: "./three-sprite-sphere.component.html",

@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from "./app.component";
 import { FireballComponent } from "./fireball/fireball.component";
 import { GradientBackComponent } from "./gradient-back/gradient-back.component";
@@ -131,7 +131,10 @@ import { ThreeHexMosicComponent } from './three-hex-mosic/three-hex-mosic.compon
     ThreeNoiseGroundComponent,
     ThreeHexMosicComponent
   ],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

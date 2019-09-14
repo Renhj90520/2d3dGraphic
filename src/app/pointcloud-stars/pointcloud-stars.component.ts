@@ -40,7 +40,7 @@ export class PointcloudStarsComponent implements OnInit {
         )
       );
     }
-    const material = new THREE.PointCloudMaterial({
+    const material = new THREE.PointsMaterial({
       size: 10,
       color: 0xffffff
     });
@@ -49,7 +49,7 @@ export class PointcloudStarsComponent implements OnInit {
   }
   update() {
     this.rotation += 1;
-    const radian = this.rotation * Math.PI / 180;
+    const radian = (this.rotation * Math.PI) / 180;
     this.camera.position.x = 1000 * Math.sin(radian);
     this.camera.position.z = 1000 * Math.cos(radian);
     this.camera.lookAt(new THREE.Vector3(0, 0, 0));
