@@ -64,6 +64,7 @@ import { ThreeTunnelAnimationComponent } from './three-tunnel-animation/three-tu
 import { ThreeBlueLightComponent } from './three-blue-light/three-blue-light.component';
 import { ThreeNoiseGroundComponent } from './three-noise-ground/three-noise-ground.component';
 import { ThreeHexMosicComponent } from './three-hex-mosic/three-hex-mosic.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import { ThreeHexMosicComponent } from './three-hex-mosic/three-hex-mosic.compon
     ThreeTunnelAnimationComponent,
     ThreeBlueLightComponent,
     ThreeNoiseGroundComponent,
-    ThreeHexMosicComponent
+    ThreeHexMosicComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

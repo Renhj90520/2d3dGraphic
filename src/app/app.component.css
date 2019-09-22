@@ -1,6 +1,5 @@
-.row {
+:host {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  height: 100%;
+  display: block;
 }
