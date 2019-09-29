@@ -242,7 +242,7 @@ export class HexGrid {
   generate(config?) {
     config = config || {};
     this.size = typeof config.size === 'undefined' ? this.size : config.size;
-    let x, y, z, c;
+    let z, c;
     for (let x = -this.size; x < this.size + 1; x++) {
       for (let y = -this.size; y < this.size + 1; y++) {
         z = -x - y;
