@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./canvas-circle-loader.component.css']
 })
 export class CanvasCircleLoaderComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
   canvas;
   canvasW;
   canvasH;

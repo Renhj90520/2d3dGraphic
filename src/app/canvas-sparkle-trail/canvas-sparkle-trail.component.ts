@@ -7,7 +7,7 @@ import Particle from './particle';
   styleUrls: ['./canvas-sparkle-trail.component.css']
 })
 export class CanvasSparkleTrailComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
   canvasWidth;
   canvasHeight;
   ctx;

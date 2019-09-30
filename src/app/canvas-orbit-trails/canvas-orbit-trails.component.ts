@@ -7,7 +7,7 @@ import Orbit from './orbit';
   styleUrls: ['./canvas-orbit-trails.component.css']
 })
 export class CanvasOrbitTrailsComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
   ctx;
   canvasWidth;
   canvasHeight;

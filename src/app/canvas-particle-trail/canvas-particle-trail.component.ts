@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import Particle from "./particle";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import Particle from './particle';
 
 @Component({
-  selector: "app-canvas-particle-trail",
-  templateUrl: "./canvas-particle-trail.component.html",
-  styleUrls: ["./canvas-particle-trail.component.css"]
+  selector: 'app-canvas-particle-trail',
+  templateUrl: './canvas-particle-trail.component.html',
+  styleUrls: ['./canvas-particle-trail.component.css']
 })
 export class CanvasParticleTrailComponent implements OnInit {
-  @ViewChild("canvas")
+  @ViewChild('canvas', { static: false })
   canvasEl;
   canvas;
   ctx;
@@ -25,7 +25,7 @@ export class CanvasParticleTrailComponent implements OnInit {
     this.initParticles();
     this.update();
 
-    this.canvas.addEventListener("click", () => {
+    this.canvas.addEventListener('click', () => {
       this.particles.length = 0;
       this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
       this.initParticles();
@@ -34,7 +34,7 @@ export class CanvasParticleTrailComponent implements OnInit {
 
   initCanvas() {
     this.canvas = this.canvasEl.nativeElement;
-    this.ctx = this.canvas.getContext("2d");
+    this.ctx = this.canvas.getContext('2d');
     this.canvasWidth = this.canvas.width;
     this.canvasHeight = this.canvas.height;
   }

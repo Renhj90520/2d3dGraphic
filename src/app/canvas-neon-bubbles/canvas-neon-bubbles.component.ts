@@ -7,7 +7,7 @@ import Particle from './particle';
   styleUrls: ['./canvas-neon-bubbles.component.css']
 })
 export class CanvasNeonBubblesComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
   canvas;
   canvasW;
   canvasH;

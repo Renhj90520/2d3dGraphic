@@ -2,10 +2,12 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 import { IShader } from './shaders/IShader';
 import NegativePositiveShader from './shaders/negative-positive-shader';
-
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 interface IShaderMap {
   material: IShader;
-  pass: THREE.ShaderPass;
+  pass: ShaderPass;
 }
 @Component({
   selector: 'app-fragment-shader',
@@ -16,7 +18,7 @@ export class FragmentShaderComponent implements OnInit {
   scene;
   camera;
   renderer;
-  composer: THREE.EffectComposer;
+  composer: EffectComposer;
   effects: { [key: string]: IShaderMap };
   effectList: IShaderMap[] = [];
   constructor(private el: ElementRef) {}
@@ -35,8 +37,8 @@ export class FragmentShaderComponent implements OnInit {
     this.camera.position.z = 3;
     this.addPicture();
 
-    this.composer = new THREE.EffectComposer(this.renderer);
-    this.composer.addPass(new THREE.RenderPass(this.scene, this.camera));
+    this.composer = new EffectComposer(this.renderer);
+    this.composer.addPass(new RenderPass(this.scene, this.camera));
     this.addShaders();
     this.update();
   }
@@ -60,7 +62,7 @@ export class FragmentShaderComponent implements OnInit {
   }
 
   addEffect(name: string, shader: IShader) {
-    const pass = new THREE.ShaderPass(shader);
+    const pass = new ShaderPass(shader);
     this.composer.addPass(pass);
     pass.renderToScreen = true;
     pass.enabled = true;

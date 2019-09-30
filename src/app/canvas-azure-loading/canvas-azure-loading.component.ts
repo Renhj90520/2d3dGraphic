@@ -8,7 +8,7 @@ import Arc from './arc';
   styleUrls: ['./canvas-azure-loading.component.css']
 })
 export class CanvasAzureLoadingComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
   canvas;
   canvasW;
   canvasH;

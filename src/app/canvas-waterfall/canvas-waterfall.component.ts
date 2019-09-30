@@ -7,7 +7,7 @@ import Particle from './particle';
   styleUrls: ['./canvas-waterfall.component.css']
 })
 export class CanvasWaterfallComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
   canvasWidth;
   canvasHeight;
   canvas;

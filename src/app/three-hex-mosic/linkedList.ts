@@ -1,14 +1,14 @@
-import { ThrowStmt } from "@angular/compiler";
+import { ThrowStmt } from '@angular/compiler';
 
 export default class LinkedList {
   first;
   last;
   length = 0;
   objToNodeMap = {};
-  uniqueId = Date.now() + "" + Math.floor(1e3 * Math.random());
+  uniqueId = Date.now() + '' + Math.floor(1e3 * Math.random());
   sortArray = [];
 
-  generateID() {
+  static generateID() {
     return (
       Math.random()
         .toString(36)
@@ -16,37 +16,37 @@ export default class LinkedList {
     );
   }
 
-  getNode(e) {
-    return this.objToNodeMap[e.uniqueId];
+  getNode(obj) {
+    return this.objToNodeMap[obj.uniqueId];
   }
 
-  addNode(i) {
+  addNode(obj) {
     const node = new Node();
-    if (!i.uniqueId) {
-      i.uniqueId = this.generateID();
+    if (!obj.uniqueId) {
+      obj.uniqueId = LinkedList.generateID();
     }
 
-    node.obj = i;
+    node.obj = obj;
     node.free = false;
-    this.objToNodeMap[i.uniqueId] = node;
+    this.objToNodeMap[obj.uniqueId] = node;
 
     return node;
   }
-  swapObjects(e, t) {
-    this.objToNodeMap[e.obj.uniqueId] = null;
-    this.objToNodeMap[t.uniqueId] = e;
-    e.obj = t;
+  swapObjects(node, newObj) {
+    this.objToNodeMap[node.obj.uniqueId] = null;
+    this.objToNodeMap[newObj.uniqueId] = node;
+    node.obj = newObj;
   }
-  add(e) {
-    let t = this.objToNodeMap[e.uniqueId];
-    if (t) {
-      if (!t.free) return;
-      t.obj = e;
-      t.free = false;
-      t.next = null;
-      t.prev = null;
+  add(obj) {
+    let node = this.objToNodeMap[obj.uniqueId];
+    if (node) {
+      if (!node.free) return;
+      node.obj = obj;
+      node.free = false;
+      node.next = null;
+      node.prev = null;
     } else {
-      t = this.addNode(e);
+      node = this.addNode(obj);
     }
 
     if (this.first) {
@@ -56,49 +56,49 @@ export default class LinkedList {
             "[LinkedList.add] No last in the list -- that shouldn't happen here"
           );
         }
-        this.last.next = t;
-        t.prev = this.last;
-        this.last = t;
-        t.next = null;
+        this.last.next = node;
+        node.prev = this.last;
+        this.last = node;
+        node.next = null;
       }
     } else {
-      this.first = t;
-      this.last = t;
-      t.next = null;
-      t.prev = null;
+      this.first = node;
+      this.last = node;
+      node.next = null;
+      node.prev = null;
     }
     this.length++;
   }
-  has(e) {
-    return !!this.objToNodeMap[e.uniqueId];
+  has(obj) {
+    return !!this.objToNodeMap[obj.uniqueId];
   }
-  moveUp(e) {
-    const t = this.getNode(e);
-    if (!t) {
+  moveUp(obj) {
+    const node = this.getNode(obj);
+    if (!node) {
       throw "Oops, trying to move an object that isn't in the list";
     }
-    if (t.prev) {
-      const i = t.prev;
+    if (node.prev) {
+      const i = node.prev;
       const s = i.prev;
-      t == this.last && (this.last = i);
-      const n = t.next;
-      s && (s.next = t);
-      t.next = i;
-      t.prev = i.prev;
+      node == this.last && (this.last = i);
+      const n = node.next;
+      s && (s.next = node);
+      node.next = i;
+      node.prev = i.prev;
       i.next = n;
-      i.prev = t;
-      this.first == i && (this.first = t);
+      i.prev = node;
+      this.first == i && (this.first = node);
     }
   }
 
-  moveDown(e) {
-    const t = this.getNode(e);
-    if (!t) throw "Oops, trying to move an object that isn't in the list";
+  moveDown(obj) {
+    const node = this.getNode(obj);
+    if (!node) throw "Oops, trying to move an object that isn't in the list";
 
-    if (t.next) {
-      const i = t.next;
+    if (node.next) {
+      const i = node.next;
       this.moveUp(i.obj);
-      this.last == i && (this.last = t);
+      this.last == i && (this.last = node);
     }
   }
   sort(e) {

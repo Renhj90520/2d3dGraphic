@@ -1,9 +1,10 @@
-import { Component, OnInit, ElementRef } from "@angular/core";
-import * as THREE from "three";
+import { Component, OnInit, ElementRef } from '@angular/core';
+import * as THREE from 'three';
+import { LegacyJSONLoader } from 'three/examples/jsm/loaders/deprecated/LegacyJSONLoader';
 @Component({
-  selector: "app-three-airplane",
-  templateUrl: "./three-airplane.component.html",
-  styleUrls: ["./three-airplane.component.css"]
+  selector: 'app-three-airplane',
+  templateUrl: './three-airplane.component.html',
+  styleUrls: ['./three-airplane.component.css']
 })
 export class ThreeAirplaneComponent implements OnInit {
   scene;
@@ -58,8 +59,9 @@ export class ThreeAirplaneComponent implements OnInit {
   }
 
   addPlane() {
-    const loader = new THREE.JSONLoader();
-    loader.load("assets/delta.js", (geo, mat) => {
+    const loader = new LegacyJSONLoader();
+    loader.load('assets/delta.js', result => {
+      const geo = result.geometry;
       const material = new THREE.MeshPhongMaterial({
         color: 0xefefff,
         specular: 0x050505,
@@ -81,8 +83,9 @@ export class ThreeAirplaneComponent implements OnInit {
     });
   }
   addMap() {
-    const loader = new THREE.JSONLoader();
-    loader.load("assets/map.js", (geo, mat) => {
+    const loader = new LegacyJSONLoader();
+    loader.load('assets/map.js', result => {
+      const geo = result.geometry;
       const material = new THREE.MeshBasicMaterial({
         color: 0xff00ff,
         side: THREE.BackSide,

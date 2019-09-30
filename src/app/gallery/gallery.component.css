@@ -1,0 +1,13 @@
+:host {
+  height: 100%;
+  overflow-y: auto;
+  display: block;
+  overflow-y: auto;
+  padding: 20px;
+}
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}

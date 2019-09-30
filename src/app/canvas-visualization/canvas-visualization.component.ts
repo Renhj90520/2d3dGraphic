@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MaterialCreator } from 'three';
 
 @Component({
   selector: 'app-canvas-visualization',
@@ -7,7 +6,7 @@ import { MaterialCreator } from 'three';
   styleUrls: ['./canvas-visualization.component.css']
 })
 export class CanvasVisualizationComponent implements OnInit {
-  @ViewChild('canvas') canvasEl;
+  @ViewChild('canvas', { static: false }) canvasEl;
 
   canvas;
   ctx;
