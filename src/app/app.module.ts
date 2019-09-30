@@ -63,7 +63,7 @@ import { ThreeLotusComponent } from "./three-lotus/three-lotus.component";
 import { ThreeTunnelAnimationComponent } from './three-tunnel-animation/three-tunnel-animation.component';
 import { ThreeBlueLightComponent } from './three-blue-light/three-blue-light.component';
 import { ThreeNoiseGroundComponent } from './three-noise-ground/three-noise-ground.component';
-import { ThreeHexMosicComponent } from './three-hex-mosic/three-hex-mosic.component';
+import { ThreeHexMosaicComponent } from './three-hex-mosaic/three-hex-mosaic.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
@@ -130,7 +130,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     ThreeTunnelAnimationComponent,
     ThreeBlueLightComponent,
     ThreeNoiseGroundComponent,
-    ThreeHexMosicComponent,
+    ThreeHexMosaicComponent,
     GalleryComponent
   ],
   imports: [

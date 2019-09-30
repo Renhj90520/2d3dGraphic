@@ -3,11 +3,11 @@ import * as THREE from 'three';
 import { HexGrid } from './HexGrid';
 import { TweenMax, Power3 } from 'gsap';
 @Component({
-  selector: 'app-three-hex-mosic',
-  templateUrl: './three-hex-mosic.component.html',
-  styleUrls: ['./three-hex-mosic.component.css']
+  selector: 'app-three-hex-mosaic',
+  templateUrl: './three-hex-mosaic.component.html',
+  styleUrls: ['./three-hex-mosaic.component.css']
 })
-export class ThreeHexMosicComponent implements OnInit {
+export class ThreeHexMosaicComponent implements OnInit {
   scene;
   camera;
   renderer;
