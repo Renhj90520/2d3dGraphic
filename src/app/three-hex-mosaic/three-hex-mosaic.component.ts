@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import * as THREE from 'three';
 import { HexGrid } from './HexGrid';
-import { TweenMax, Power3 } from 'gsap';
+import { TweenMax, Power3, Power4, TimelineMax } from 'gsap';
 @Component({
   selector: 'app-three-hex-mosaic',
   templateUrl: './three-hex-mosaic.component.html',
@@ -18,12 +18,16 @@ export class ThreeHexMosaicComponent implements OnInit {
   background: ImagePlane;
   grid: any;
   loader: any;
+  loop: number;
+  pointLight: THREE.PointLight;
+
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
     this.initThree();
     this.addLights();
     this.addMosaic();
+    this.onResize();
     this.update();
     this.loader = THREE.DefaultLoadingManager;
     this.loader.onProgress = (url, itemsLoaded, itemsTotal) => {
@@ -36,8 +40,19 @@ export class ThreeHexMosaicComponent implements OnInit {
     this.scene.add(this.background.mesh);
     this.scene.add(this.grid.groupObject);
 
-    console.log(this.scene);
     this.grid.animateGridTilesIn();
+    TweenMax.to(this.pointLight, 1.5, {
+      intensity: 0
+    });
+
+    TweenMax.from(this.background.scale, 1.8, {
+      x: 1.4,
+      y: 1.4,
+      onUpdate: () => {
+        this.background.updateSize();
+      },
+      ease: Power4.easeOut
+    });
   }
   addMosaic() {
     this.background = new ImagePlane(
@@ -46,15 +61,15 @@ export class ThreeHexMosaicComponent implements OnInit {
     );
     this.background.scale.set(1.1, 1.1);
     this.grid = new HexGridBuilder(this.camera);
-    console.log(this.grid);
+    // console.log(this.grid);
     this.grid.setTexture('/assets/images/mosaic_sheet.jpg');
   }
   addLights() {
     const ambientLight = new THREE.AmbientLight(0xffffff);
     this.scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xffffff, 1, 20);
-    pointLight.position.set(0, 0, 0);
-    this.scene.add(pointLight);
+    this.pointLight = new THREE.PointLight(0xffffff, 1, 20);
+    this.pointLight.position.set(0, 0, 0);
+    this.scene.add(this.pointLight);
   }
 
   initThree() {
@@ -77,8 +92,51 @@ export class ThreeHexMosaicComponent implements OnInit {
   update() {
     this.renderer.render(this.scene, this.camera);
     this.camera.lookAt(this.scene.position);
+    this.updateGridOver();
+    this.updateMosaicTile();
 
-    requestAnimationFrame(this.update.bind(this));
+    this.loop = requestAnimationFrame(this.update.bind(this));
+  }
+  updateMosaicTile() {
+    TweenMax.to(this.camera.position, 1.5, {
+      x: this.mouse.x * 0.5,
+      y: this.mouse.y * 0.5
+    });
+  }
+  updateGridOver() {
+    if (this.mouse.x !== 0 && this.mouse.y !== 0) {
+      this.raycaster.setFromCamera(this.mouse, this.camera);
+      const intersects = this.raycaster.intersectObjects(
+        this.grid.groupObject.children
+      );
+      if (intersects.length > 0) {
+        this.grid.setActiveCell(intersects[0].object);
+      }
+    }
+  }
+
+  resize() {
+    const width = this.el.nativeElement.clientWidth;
+    const height = this.el.nativeElement.clientHeight;
+    this.renderer.setSize(width, height);
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.resize();
+    if (this.background) {
+      this.background.updateSize();
+    }
+    if (this.grid) {
+      this.grid.updateSize();
+    }
+  }
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(evt) {
+    this.mouse.x = (evt.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(evt.clientY / window.innerHeight) * 2 + 1;
   }
 }
 
@@ -132,6 +190,7 @@ class Object3DResizer {
   }
   setSize(width, height) {
     this.scale.set(width, height);
+    console.log(this.camera);
     this.update();
   }
   update() {
@@ -139,6 +198,7 @@ class Object3DResizer {
     const h = Utils.visibleHeightAtZDepth(this.camera);
     this.obj.scale.x = w * this.scale.x;
     this.obj.scale.y = h * this.scale.y;
+    console.log(this.obj.scale);
   }
 }
 class TextureResizer {
@@ -184,7 +244,7 @@ class TextureResizer {
       formFactorY = heightCover / this.obj.scale.y;
     }
 
-    const scaleX = 1 / (this.scale.x * formFactorY);
+    const scaleX = 1 / (this.scale.x * formFactorX);
     const scaleY = 1 / (this.scale.y * formFactorY);
 
     this.texture.repeat.set(scaleX, scaleY);
@@ -333,7 +393,7 @@ class HexGridBuilder {
     const halfY = 1 / tilesY / 2;
     idx = idx % framesCount;
     const xIndex = idx % tilesX;
-    const yIndex = idx % tilesY;
+    const yIndex = Math.floor(idx / tilesX);
     const x = 1 - xIndex / tilesX - halfX;
     const y = 1 - yIndex / tilesY - halfY;
 
@@ -394,5 +454,52 @@ class HexGridBuilder {
       z: 7,
       ease: Power3.easeOut
     });
+  }
+
+  deactiveAll() {
+    while (this.activeCells.length > 0) {
+      const c = this.activeCells.pop();
+      this.animateHoverToleOut(c);
+    }
+  }
+
+  animateHoverTileIn(mesh) {
+    const tl = new TimelineMax();
+    mesh.material.uniforms.opacity.value = 0;
+    tl.to(mesh.material.uniforms.opacity, 0.5, { value: 0.8 });
+    tl.to(mesh.scale, 0.35, { x: 1, y: 1 }, -0.5);
+  }
+  animateHoverToleOut(mesh) {
+    const tl = new TimelineMax({
+      onComplete: () => {
+        this.groupObject.remove(mesh);
+        mesh.geometry.dispose();
+        mesh.material.dispose();
+        mesh = undefined;
+      }
+    });
+
+    tl.to(mesh.material.uniforms.opacity, 0.95, {
+      value: 0
+    });
+  }
+
+  setActiveCell(object3d) {
+    if (object3d && object3d.userData.isOver === false) {
+      if (this.lastActiveCell != object3d) {
+        this.deactiveAll();
+        this.lastActiveCell = object3d;
+        const mesh = this.getMeshFromCell(
+          object3d.userData.cell,
+          false,
+          object3d.userData.frameIndex
+        );
+        mesh.userData.isOver = true;
+        mesh.position.y = 0.99;
+        this.animateHoverTileIn(mesh);
+        this.activeCells.push(mesh);
+        this.groupObject.add(mesh);
+      }
+    }
   }
 }
