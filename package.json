@@ -22,7 +22,7 @@
     "@angular/router": "~8.2.5",
     "createjs": "^1.0.1",
     "dat.gui": "^0.7.2",
-    "gsap": "^1.20.6",
+    "gsap": "^3.6.0",
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.4.0",
