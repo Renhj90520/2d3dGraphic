@@ -25,13 +25,12 @@
   <circle cx="10" cy="80" r="2" fill="white" id="start-point" />
   <circle cx="180" cy="80" r="2" fill="white" id="end-point" />
   <circle
-    cx="95"
-    cy="80"
+    [attr.cx]="point.x"
+    [attr.cy]="point.y"
     r="5"
     fill="#FDD835"
     #controlpoint
     cdkDrag
-    cdkDragBoundary="svg"
     (cdkDragMoved)="dragMove($event)"
     (cdkDragReleased)="dragReleased($event)"
     id="control-point"

@@ -9,11 +9,11 @@
     rgba(23, 41, 48, 1) 100%
   );
 }
-svg {
+/* svg {
   width: 100%;
   height: 100%;
   background-color: transparent;
-}
+} */
 #control-point {
   cursor: grab;
 }

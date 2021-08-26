@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FireballComponent } from "./fireball/fireball.component";
 import { GradientBackComponent } from "./gradient-back/gradient-back.component";
@@ -60,12 +60,13 @@ import { ThreeSpriteSphereComponent } from "./three-sprite-sphere/three-sprite-s
 import { ThreeAirplaneComponent } from "./three-airplane/three-airplane.component";
 import { ThreeAirplaneColoredComponent } from "./three-airplane-colored/three-airplane-colored.component";
 import { ThreeLotusComponent } from "./three-lotus/three-lotus.component";
-import { ThreeTunnelAnimationComponent } from './three-tunnel-animation/three-tunnel-animation.component';
-import { ThreeBlueLightComponent } from './three-blue-light/three-blue-light.component';
-import { ThreeNoiseGroundComponent } from './three-noise-ground/three-noise-ground.component';
-import { ThreeHexMosaicComponent } from './three-hex-mosaic/three-hex-mosaic.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { SvgBouncyLineComponent } from './svg-bouncy-line/svg-bouncy-line.component';
+import { ThreeTunnelAnimationComponent } from "./three-tunnel-animation/three-tunnel-animation.component";
+import { ThreeBlueLightComponent } from "./three-blue-light/three-blue-light.component";
+import { ThreeNoiseGroundComponent } from "./three-noise-ground/three-noise-ground.component";
+import { ThreeHexMosaicComponent } from "./three-hex-mosaic/three-hex-mosaic.component";
+import { GalleryComponent } from "./gallery/gallery.component";
+import { SvgBouncyLineComponent } from "./svg-bouncy-line/svg-bouncy-line.component";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -133,13 +134,10 @@ import { SvgBouncyLineComponent } from './svg-bouncy-line/svg-bouncy-line.compon
     ThreeNoiseGroundComponent,
     ThreeHexMosaicComponent,
     GalleryComponent,
-    SvgBouncyLineComponent
+    SvgBouncyLineComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, DragDropModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
