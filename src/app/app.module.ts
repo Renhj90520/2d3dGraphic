@@ -65,6 +65,7 @@ import { ThreeBlueLightComponent } from './three-blue-light/three-blue-light.com
 import { ThreeNoiseGroundComponent } from './three-noise-ground/three-noise-ground.component';
 import { ThreeHexMosaicComponent } from './three-hex-mosaic/three-hex-mosaic.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { SvgBouncyLineComponent } from './svg-bouncy-line/svg-bouncy-line.component';
 
 @NgModule({
   declarations: [
@@ -131,7 +132,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     ThreeBlueLightComponent,
     ThreeNoiseGroundComponent,
     ThreeHexMosaicComponent,
-    GalleryComponent
+    GalleryComponent,
+    SvgBouncyLineComponent
   ],
   imports: [
     BrowserModule,
