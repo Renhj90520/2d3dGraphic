@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./canvas-matrix-text.component.css']
 })
 export class CanvasMatrixTextComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasW;
   canvasH;

@@ -7,7 +7,7 @@ import Dots from './dots';
   styleUrls: ['./canvas-lineeffect.component.css']
 })
 export class CanvasLineeffectComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasWidth;
   canvasHeight;

@@ -8,8 +8,8 @@ import Bokeh from './bokeh';
   styleUrls: ['./canvas-bokeh-generation.component.css']
 })
 export class CanvasBokehGenerationComponent implements OnInit {
-  @ViewChild('canvas1', { static: false }) canvas1El;
-  @ViewChild('canvas2', { static: false }) canvas2El;
+  @ViewChild('canvas1') canvas1El;
+  @ViewChild('canvas2') canvas2El;
   canvas1;
   canvas2;
   canvasW;

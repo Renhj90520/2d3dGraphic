@@ -8,7 +8,7 @@ import Star from './star';
   styleUrls: ['./canvas-starry-sky.component.css']
 })
 export class CanvasStarrySkyComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasW;
   canvasH;

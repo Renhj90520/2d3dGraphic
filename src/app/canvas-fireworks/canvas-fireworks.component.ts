@@ -8,7 +8,7 @@ import Particle from './particle';
   styleUrls: ['./canvas-fireworks.component.css']
 })
 export class CanvasFireworksComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasWidth;
   canvasHeight;

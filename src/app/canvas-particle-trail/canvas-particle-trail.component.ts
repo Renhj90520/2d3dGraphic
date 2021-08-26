@@ -7,7 +7,7 @@ import Particle from './particle';
   styleUrls: ['./canvas-particle-trail.component.css']
 })
 export class CanvasParticleTrailComponent implements OnInit {
-  @ViewChild('canvas', { static: false })
+  @ViewChild('canvas')
   canvasEl;
   canvas;
   ctx;

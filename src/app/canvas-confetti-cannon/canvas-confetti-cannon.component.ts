@@ -8,7 +8,7 @@ import { TweenLite } from 'gsap';
   styleUrls: ['./canvas-confetti-cannon.component.css']
 })
 export class CanvasConfettiCannonComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasW;
   canvasH;

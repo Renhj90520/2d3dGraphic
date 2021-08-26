@@ -7,7 +7,7 @@ import Firework from './firework';
   styleUrls: ['./canvas-crazy-fireworks.component.css']
 })
 export class CanvasCrazyFireworksComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasW;
   canvasH;

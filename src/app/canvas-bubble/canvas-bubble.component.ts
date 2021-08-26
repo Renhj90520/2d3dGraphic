@@ -7,7 +7,7 @@ import Bubble from './bubble';
   styleUrls: ['./canvas-bubble.component.css']
 })
 export class CanvasBubbleComponent implements OnInit {
-  @ViewChild('canvas', { static: false }) canvasEl;
+  @ViewChild('canvas') canvasEl;
   canvas;
   canvasW;
   canvasH;
