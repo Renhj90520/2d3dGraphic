@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SvgBouncyLineComponent } from './svg-bouncy-line.component';
 
@@ -6,7 +6,7 @@ describe('SvgBouncyLineComponent', () => {
   let component: SvgBouncyLineComponent;
   let fixture: ComponentFixture<SvgBouncyLineComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SvgBouncyLineComponent ]
     })

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeGsapFlipyComponent } from './three-gsap-flipy.component';
 
@@ -6,7 +6,7 @@ describe('ThreeGsapFlipyComponent', () => {
   let component: ThreeGsapFlipyComponent;
   let fixture: ComponentFixture<ThreeGsapFlipyComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeGsapFlipyComponent ]
     })

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CanvasWaterfallComponent } from './canvas-waterfall.component';
 
@@ -6,7 +6,7 @@ describe('CanvasWaterfallComponent', () => {
   let component: CanvasWaterfallComponent;
   let fixture: ComponentFixture<CanvasWaterfallComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CanvasWaterfallComponent ]
     })

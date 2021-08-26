@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CanvasSparkleLoaderComponent } from './canvas-sparkle-loader.component';
 
@@ -6,7 +6,7 @@ describe('CanvasSparkleLoaderComponent', () => {
   let component: CanvasSparkleLoaderComponent;
   let fixture: ComponentFixture<CanvasSparkleLoaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CanvasSparkleLoaderComponent ]
     })

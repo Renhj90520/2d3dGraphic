@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeExplodeTextComponent } from './three-explode-text.component';
 
@@ -6,7 +6,7 @@ describe('ThreeExplodeTextComponent', () => {
   let component: ThreeExplodeTextComponent;
   let fixture: ComponentFixture<ThreeExplodeTextComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeExplodeTextComponent ]
     })

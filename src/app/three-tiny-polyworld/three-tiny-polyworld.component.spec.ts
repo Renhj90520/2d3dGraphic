@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeTinyPolyworldComponent } from './three-tiny-polyworld.component';
 
@@ -6,7 +6,7 @@ describe('ThreeTinyPolyworldComponent', () => {
   let component: ThreeTinyPolyworldComponent;
   let fixture: ComponentFixture<ThreeTinyPolyworldComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeTinyPolyworldComponent ]
     })

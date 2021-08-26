@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CanvasAzureLoadingComponent } from './canvas-azure-loading.component';
 
@@ -6,7 +6,7 @@ describe('CanvasAzureLoadingComponent', () => {
   let component: CanvasAzureLoadingComponent;
   let fixture: ComponentFixture<CanvasAzureLoadingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CanvasAzureLoadingComponent ]
     })

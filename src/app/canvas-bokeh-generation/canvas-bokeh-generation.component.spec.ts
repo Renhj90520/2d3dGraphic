@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CanvasBokehGenerationComponent } from './canvas-bokeh-generation.component';
 
@@ -6,7 +6,7 @@ describe('CanvasBokehGenerationComponent', () => {
   let component: CanvasBokehGenerationComponent;
   let fixture: ComponentFixture<CanvasBokehGenerationComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CanvasBokehGenerationComponent ]
     })

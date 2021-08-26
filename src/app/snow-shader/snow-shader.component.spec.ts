@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SnowShaderComponent } from './snow-shader.component';
 
@@ -6,7 +6,7 @@ describe('SnowShaderComponent', () => {
   let component: SnowShaderComponent;
   let fixture: ComponentFixture<SnowShaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SnowShaderComponent ]
     })

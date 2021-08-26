@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeGsapTimescaleComponent } from './three-gsap-timescale.component';
 
@@ -6,7 +6,7 @@ describe('ThreeGsapTimescaleComponent', () => {
   let component: ThreeGsapTimescaleComponent;
   let fixture: ComponentFixture<ThreeGsapTimescaleComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeGsapTimescaleComponent ]
     })

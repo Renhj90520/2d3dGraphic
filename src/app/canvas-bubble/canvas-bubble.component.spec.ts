@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CanvasBubbleComponent } from './canvas-bubble.component';
 
@@ -6,7 +6,7 @@ describe('CanvasBubbleComponent', () => {
   let component: CanvasBubbleComponent;
   let fixture: ComponentFixture<CanvasBubbleComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CanvasBubbleComponent ]
     })

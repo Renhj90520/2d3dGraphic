@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VectorCrossComponent } from './vector-cross.component';
 
@@ -6,7 +6,7 @@ describe('VectorCrossComponent', () => {
   let component: VectorCrossComponent;
   let fixture: ComponentFixture<VectorCrossComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VectorCrossComponent ]
     })

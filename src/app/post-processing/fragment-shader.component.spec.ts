@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FragmentShaderComponent } from './fragment-shader.component';
 
@@ -6,7 +6,7 @@ describe('FragmentShaderComponent', () => {
   let component: FragmentShaderComponent;
   let fixture: ComponentFixture<FragmentShaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ FragmentShaderComponent ]
     })

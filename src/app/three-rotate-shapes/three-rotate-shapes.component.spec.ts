@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeRotateShapesComponent } from './three-rotate-shapes.component';
 
@@ -6,7 +6,7 @@ describe('ThreeRotateShapesComponent', () => {
   let component: ThreeRotateShapesComponent;
   let fixture: ComponentFixture<ThreeRotateShapesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeRotateShapesComponent ]
     })

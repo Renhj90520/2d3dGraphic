@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VectorAddSubComponent } from './vector-add-sub.component';
 
@@ -6,7 +6,7 @@ describe('VectorAddSubComponent', () => {
   let component: VectorAddSubComponent;
   let fixture: ComponentFixture<VectorAddSubComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VectorAddSubComponent ]
     })

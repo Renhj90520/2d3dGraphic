@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CanvasMatrixTextComponent } from './canvas-matrix-text.component';
 
@@ -6,7 +6,7 @@ describe('CanvasMatrixTextComponent', () => {
   let component: CanvasMatrixTextComponent;
   let fixture: ComponentFixture<CanvasMatrixTextComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CanvasMatrixTextComponent ]
     })

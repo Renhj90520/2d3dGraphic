@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeNoiseGroundComponent } from './three-noise-ground.component';
 
@@ -6,7 +6,7 @@ describe('ThreeNoiseGroundComponent', () => {
   let component: ThreeNoiseGroundComponent;
   let fixture: ComponentFixture<ThreeNoiseGroundComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeNoiseGroundComponent ]
     })

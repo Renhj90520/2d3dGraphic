@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeHexMosaicComponent } from './three-hex-mosaic.component';
 
@@ -6,7 +6,7 @@ describe('ThreeHexMosaicComponent', () => {
   let component: ThreeHexMosaicComponent;
   let fixture: ComponentFixture<ThreeHexMosaicComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeHexMosaicComponent ]
     })

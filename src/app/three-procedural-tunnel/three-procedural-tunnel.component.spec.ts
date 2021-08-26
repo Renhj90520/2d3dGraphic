@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeProceduralTunnelComponent } from './three-procedural-tunnel.component';
 
@@ -6,7 +6,7 @@ describe('ThreeProceduralTunnelComponent', () => {
   let component: ThreeProceduralTunnelComponent;
   let fixture: ComponentFixture<ThreeProceduralTunnelComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeProceduralTunnelComponent ]
     })

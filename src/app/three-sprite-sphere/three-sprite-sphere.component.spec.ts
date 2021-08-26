@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ThreeSpriteSphereComponent } from './three-sprite-sphere.component';
 
@@ -6,7 +6,7 @@ describe('ThreeSpriteSphereComponent', () => {
   let component: ThreeSpriteSphereComponent;
   let fixture: ComponentFixture<ThreeSpriteSphereComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ThreeSpriteSphereComponent ]
     })
