@@ -1,0 +1,110 @@
+<svg:defs>
+  <svg:linearGradient [id]="gid" x1="0%" y1="0%" x2="100%" y2="0%">
+    <svg:stop offset="0%" [attr.stop-color]="gradient?.from"></svg:stop>
+    <svg:stop offset="100%" [attr.stop-color]="gradient?.to"></svg:stop>
+  </svg:linearGradient>
+
+  <svg:filter
+    [id]="fid"
+    filterUnits="userSpaceOnUse"
+    x="-10"
+    y="-10"
+    width="120"
+    height="120"
+  >
+    <svg:feDropShadow
+      dx="0"
+      dy="1"
+      stdDeviation="2"
+      [attr.flood-color]="gradient?.from"
+      flood-opacity="0.2"
+    ></svg:feDropShadow>
+    <svg:feDropShadow
+      dx="0"
+      dy="-1"
+      stdDeviation="2"
+      [attr.flood-color]="gradient?.from"
+      flood-opacity="0.2"
+    ></svg:feDropShadow>
+  </svg:filter>
+</svg:defs>
+
+<svg:path
+  [attr.d]="
+    'M0,' +
+    (height / 2 + thickness) +
+    ' v' +
+    -thickness +
+    ' L' +
+    width / 2 +
+    ',0 L' +
+    width +
+    ',' +
+    height / 2 +
+    ' v' +
+    thickness +
+    ' L' +
+    width / 2 +
+    ',' +
+    (height + thickness) +
+    ' Z'
+  "
+  [attr.fill]="'url(#' + gid + ')'"
+  [attr.filter]="'url(#' + fid + ')'"
+/>
+<svg:path
+  [attr.d]="
+    'M0,' +
+    (height / 2 + thickness) +
+    ' v' +
+    -thickness +
+    ' L' +
+    width / 2 +
+    ',' +
+    height +
+    ' v' +
+    thickness +
+    ' Z'
+  "
+  fill="rgba(0,0,0,0.3)"
+/>
+<svg:path
+  [attr.d]="
+    'M' +
+    width / 2 +
+    ',' +
+    (height + thickness) +
+    ' v' +
+    -thickness +
+    ' L' +
+    width +
+    ',' +
+    height / 2 +
+    '  v' +
+    thickness +
+    ' Z'
+  "
+  fill="rgba(1,1,1,0.3)"
+/>
+<svg:text
+  x="0"
+  y="0"
+  dominant-baseline="middle"
+  text-anchor="middle"
+  fill="white"
+  fill-opacity="0.8"
+  style="font-weight: bold"
+  [ngStyle]="{
+    'font-size': (fontsize * size) / 100,
+    transform:
+      'skew(-68deg, 22deg) ' +
+      'translateX(calc(49px * ' +
+      size +
+      ' / 100)) 
+      translateY(calc(7px * ' +
+      size +
+      ' / 100)) scaleY(0.5)'
+  }"
+>
+  {{ text }}
+</svg:text>

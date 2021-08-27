@@ -1,0 +1,11 @@
+@keyframes hover {
+  0%,
+  100% {
+    transform: translateX(var(--offset-x)) translateY(var(--offset-y))
+      translateZ(var(--offset-z));
+  }
+  50% {
+    transform: translateX(var(--offset-x))
+      translateY(calc(var(--offset-y) + 3px)) translateZ(var(--offset-z));
+  }
+}

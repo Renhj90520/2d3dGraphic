@@ -67,6 +67,9 @@ import { ThreeHexMosaicComponent } from "./three-hex-mosaic/three-hex-mosaic.com
 import { GalleryComponent } from "./gallery/gallery.component";
 import { SvgBouncyLineComponent } from "./svg-bouncy-line/svg-bouncy-line.component";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { SvgFloatingLayersComponent } from "./svg-floating-layers/svg-floating-layers.component";
+import { LayerComponent } from "./svg-floating-layers/layer/layer.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -135,8 +138,15 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     ThreeHexMosaicComponent,
     GalleryComponent,
     SvgBouncyLineComponent,
+    SvgFloatingLayersComponent,
+    LayerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, DragDropModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    DragDropModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
